@@ -1,0 +1,25 @@
+name: kdhcad
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+      - torch==2.6.0
+      - torchvision==0.21.0
+      - transformers==4.57.0
+      - accelerate==1.12.0
+      - qwen-vl-utils==0.0.8
+      - modelscope
+      - pillow
+      - numpy
+      - scikit-learn
+      - tqdm
+      - swanlab
+      - lightning
+      - setproctitle
+      - loguru
+      - decord
+      - av
