@@ -15,7 +15,7 @@ It can be run with Pytorch 2.6.0 + CUDA 12.1 on the operating system Ubuntu, Win
 
 ## 1. Copyright
 
-- KDH-CAD is GNU licensed. It is developed and maintained by Ziqin Gao, Zhijie Yang, and Qiang Zou for research use. All rights of the program are reserved by Qiang Zou. This Python source code is available only for primary use for academic purposes. No secondary use, such as copy, distribution, diversion, business purpose, etc., is allowed. In no event shall the author be liable to any party for direct, indirect, special, incidental, or consequential damage arising out of the use of this program. KDH-CAD is self-contained.
+- KDH-CAD is MIT licensed. It is developed and maintained by Ziqin Gao, Zhijie Yang, and Qiang Zou for research use. All rights of the program are reserved by Qiang Zou. This Python source code is available only for primary use for academic purposes. No secondary use, such as copy, distribution, diversion, business purpose, etc., is allowed. In no event shall the author be liable to any party for direct, indirect, special, incidental, or consequential damage arising out of the use of this program. KDH-CAD is self-contained.
 
 ## 2. Download
 
