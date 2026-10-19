@@ -11,11 +11,11 @@
 
 The source code was developed as a byproduct of the projects and methods presented in KDH-CAD (see reference), which is a knowledge--data hybrid learning method for CAD under data scarcity. It keeps a pre-trained vision-language model frozen, uses domain knowledge from textbooks and tutorials to complete CAD concepts, and calibrates them with a small amount of labeled CAD data through Shift Vector and cross-attention for part classification and model retrieval.
 
-It can be run with Pytorch 2.6.0 + CUDA 12.1 on the operating system Ubuntu, Windows and Mac.
+It can be run with Pytorch 2.6.0 + CUDA 12.4 on the operating system Ubuntu, Windows and Mac.
 
 ## 1. Copyright
 
-- KDH-CAD is MIT licensed. It is developed and maintained by Ziqin Gao, Zhijie Yang, and Qiang Zou for research use. All rights of the program are reserved by Qiang Zou. This Python source code is available only for primary use for academic purposes. No secondary use, such as copy, distribution, diversion, business purpose, etc., is allowed. In no event shall the author be liable to any party for direct, indirect, special, incidental, or consequential damage arising out of the use of this program. KDH-CAD is self-contained.
+- KDH-CAD is GNU licensed. It is developed and maintained by Ziqin Gao, Zhijie Yang, and Qiang Zou for research use. All rights of the program are reserved by Qiang Zou. This Python source code is available only for primary use for academic purposes. No secondary use, such as copy, distribution, diversion, business purpose, etc., is allowed. In no event shall the author be liable to any party for direct, indirect, special, incidental, or consequential damage arising out of the use of this program. KDH-CAD is self-contained.
 
 ## 2. Download
 
@@ -24,19 +24,13 @@ It can be run with Pytorch 2.6.0 + CUDA 12.1 on the operating system Ubuntu, Win
 - FabWave: obtain it from the [official FabWave download page](https://www.dimelab.org/fabwave-dataset-downloads).
 - Qwen3-VL-2B: obtain it from [ModelScope: Qwen3-VL-2B-Instruct](https://modelscope.cn/models/Qwen/Qwen3-VL-2B-Instruct).
 
-You can directly download the best checkpoints trained with the 1k-sample setting used in the paper:
-
-```bash
-cp configs/download.env.example configs/download.env
-# Edit configs/download.env and add the checkpoint direct links
-bash scripts/download_checkpoints.sh
-```
-
-This script downloads checkpoints only. It supports resumable direct downloads. You can also download the checkpoint manually and set its relative path in `configs/paths.env`.
+You can download the best checkpoint trained with the 1k-sample setting used in the paper:
 
 | Purpose | Configuration key | Release link |
 |---|---|---|
-| Best checkpoint trained on 1k samples of TMCAD | `KDH_CAD_TMCAD_CKPT` | https://pan.baidu.com/s/1x2C3lgjOcZzu_GzfoMgbLw?pwd=53ky |
+| Best checkpoint trained on 1k samples of TMCAD | `KDH_CAD_TMCAD_CKPT` | https://pan.baidu.com/s/1x2C3lgjOcZzu_GzfoMgbLw?pwd=53ky (extraction code: `53ky`) |
+
+Note: Baidu Netdisk provides a web page rather than a direct file link, so the checkpoint must be downloaded manually from the link above. After downloading, place `kdhcad_tmcad_best.pth` under the assets directory and point `KDH_CAD_TMCAD_CKPT` in `configs/paths.env` at it (default: `assets/kdhcad_tmcad_best.pth`). The download can be verified with `sha256sum kdhcad_tmcad_best.pth`; the expected SHA256 is `c9e3d81245ff806c5e6a5354c10058dd3db8921cf8f0fa9a7f4a29c790dbb75a`.
 
 Relative setting is included in `configs/paths.env.example`.
 
@@ -46,13 +40,13 @@ Relative setting is included in `configs/paths.env.example`.
 kdhcad-release/
 ├── code/                 # Paper core: training, testing, retrieval, and knowledge encoding
 │   └── data_pipe/        # STEP-to-multi-view conversion and few-shot split tools
-├── configs/              # Local-path and checkpoint-download templates
+├── configs/              # Local-path configuration template
 ├── figures/              # General KDH-CAD architecture figure
-├── scripts/              # Model/checkpoint downloads and two training/test entry points
+├── scripts/              # Pre-trained VLM download and two training/test entry points
 └── environment.yaml
 ```
 
-## 4. Installing (Linux + Pytorch 2.6.0 + CUDA 12.1)
+## 4. Installing (Linux + Pytorch 2.6.0 + CUDA 12.4)
 
 ```bash
 conda env create -f environment.yaml

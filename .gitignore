@@ -1,0 +1,20 @@
+# Local configuration and downloaded assets
+configs/paths.env
+data/
+artifacts/
+outputs/
+checkpoints/
+assets/
+models/
+results/
+downloads/
+*.pth
+*.pt
+*.bundle.pt
+
+# Python and experiment runtime files
+__pycache__/
+*.py[cod]
+.pytest_cache/
+swanlog/
+*.log
